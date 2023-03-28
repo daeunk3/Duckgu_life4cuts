@@ -97,11 +97,6 @@
             opacity: 0;
         }
 
-        .video {
-            width: 100%;
-            height: 100%;
-        }
-
         .showText {
             opacity: 1;
         }
@@ -122,9 +117,12 @@
             } else if (number === 2) {
                 document.querySelector("#desc2").classList.remove("hideText");
                 document.querySelector("#desc2").classList.add("showText");
-            } else {
+            } else if (number === 3) {
                 document.querySelector("#desc3").classList.remove("hideText");
                 document.querySelector("#desc3").classList.add("showText");
+            } else {
+                document.querySelector("#desc4").classList.remove("hideText");
+                document.querySelector("#desc4").classList.add("showText");
             }
         }
 
@@ -138,16 +136,19 @@
             } else if (number === 2) {
                 document.querySelector("#desc2").classList.remove("showText");
                 document.querySelector("#desc2").classList.add("hideText");
-            } else {
+            } else if (number === 3) {
                 document.querySelector("#desc3").classList.remove("showText");
                 document.querySelector("#desc3").classList.add("hideText");
+            } else {
+                document.querySelector("#desc4").classList.remove("showText");
+                document.querySelector("#desc4").classList.add("hideText");
             }
         }
 
         // 클릭 기능
         // 1. 선택된 사진의 숫자를 가진 텍스트를 alert 형태로 출력해줌
         function alertText(number) {
-            alert(`${number}번째 추억이에요! 눌러주셔서 감사합니다 :)`);
+            alert(`${number}번째 추억이에요! 클릭하면 튀어나온다!`);
         }
     </script>
 </head>
@@ -161,33 +162,38 @@
                 onclick="alertText(1)"
             >
                 <span id="desc1" class="photo_description">
-                    우리 강아지 초 귀여워
+                    우리 강아지 초 귀여워!!
                 </span>
             </div>
             <div id="image2" class="photo-frame"
+
                 onmouseover="showText(2)"
                 onmouseout="hideText(2)"
                 onclick="alertText(2)"
             >
                 <span id="desc2" class="photo_description">
-                    책상 밑이 조아요
+                    책상 밑이 조아요~
                 </span>
             </div>
             <div id="image3" class="photo-frame"
+
                 onmouseover="showText(3)"
                 onmouseout="hideText(3)"
                 onclick="alertText(3)"
             >
                 <span id="desc3" class="photo_description">
-                    못생긴 쿨쿨몬
+                    못생긴 쿨쿨몬(심장주의)
                 </span>
             </div>
-            <div class="photo-frame">
-                <iframe
-                    src="https://www.youtube.com/embed/2Cs880vfIoI"
-                    frameborder="0"
-                    class="video"
-                ></iframe>
+            <div id="image4" class="photo-frame"
+
+               onmouseover="showText(4)"
+                onmouseout="hideText(4)"
+                onclick="alertText(4)"
+            >
+                <span id="desc4" class="photo_description">
+                    웃는 모습이 최고❤
+                </span>
             </div>
         </div>
         <div class="footer">
